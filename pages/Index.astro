@@ -1,0 +1,11 @@
+---
+// Customer/company directory page, injected into the host build via the manifest's
+// route slot. The full CRUD UI is a hydrated React island.
+import CustomersList from "../islands/CustomersList.tsx";
+---
+
+<section class="page page--customers">
+  <h1>Kunden</h1>
+  <p class="page__intro">Das zentrale Kundenverzeichnis — Grundlage für Zugänge, Abrechnung und Portal.</p>
+  <CustomersList client:load />
+</section>

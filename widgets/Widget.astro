@@ -1,0 +1,10 @@
+---
+// Customers dashboard widget shell — card chrome + a hydrated island that fetches
+// /customers/summary (the directory count).
+import WidgetBody from "../islands/WidgetBody.tsx";
+---
+
+<article class="widget widget--customers">
+  <h3>Kunden</h3>
+  <WidgetBody client:load />
+</article>
