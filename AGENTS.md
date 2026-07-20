@@ -5,12 +5,11 @@ The **customer/company directory** panel extension: the panel's canonical
 implement that contract); `tds-ext-lexware` / `tds-ext-support-tickets` are the
 worked references for the container-first Module + RBAC pattern.
 
-> Status (2026-07-20): **built, repo pushed, NOT yet published.** The repo has **no
-> `PACKAGE_TOKEN` secret**, so `dev.yml` fails (can't install the contract from Packages
-> or publish). Go-live: add `PACKAGE_TOKEN` → run Release → publish `@0.1.x` → wire into
-> the admin product's `astro.config` (this ext's `/admin/customers` then replaces the
-> legacy `tds-customer-api` company-list call the panel user-management uses). See the
-> root `MIGRATION-STATUS.md` (issue #3).
+> Status (2026-07-20): **published @0.1.1** (GitHub Packages `@latest`, tag `v0.1.1`).
+> Remaining go-live: wire into the admin product's `astro.config` (dep `^0.1.1` + the
+> extensions array) — this ext's `/admin/customers` then replaces the legacy
+> `tds-customer-api` company-list call the panel user-management uses. See the root
+> `MIGRATION-STATUS.md` (issue #3).
 
 ## What it does
 
