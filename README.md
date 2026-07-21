@@ -1,7 +1,7 @@
-# tds-ext-customers
+# tds-ext-customers-pkg
 
 **Customer/company directory** for the TDS panel — the canonical `customer` list.
-A build-time-composed extension for the panel platform (`tds-panel-contract` +
+A build-time-composed extension for the panel platform (`tds-panel-contract-pkg` +
 `tds-core-panel-*`).
 
 ## Features
@@ -22,7 +22,7 @@ the legacy service; this extension replaces it and is the foundation for the
 billing / projects / documents / messages extensions. On cutover, preserve existing
 customer ids (`tds-auth-api` memberships reference them) and repoint the frontend's
 `CUSTOMER_API_URL` at `GET /admin/customers`. Table `customer` is distinct from
-`tds-ext-lexware`'s own `lx_customer` billing directory.
+`tds-ext-lexware-pkg`'s own `lx_customer` billing directory.
 
 ## Develop
 

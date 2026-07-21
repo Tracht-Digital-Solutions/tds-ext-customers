@@ -1,8 +1,8 @@
-# AGENTS.md — tds-ext-customers
+# AGENTS.md — tds-ext-customers-pkg
 
 The **customer/company directory** panel extension: the panel's canonical
-`customer` list. Read `tds-panel-contract`'s AGENTS.md first (extensions
-implement that contract); `tds-ext-lexware` / `tds-ext-support-tickets` are the
+`customer` list. Read `tds-panel-contract-pkg`'s AGENTS.md first (extensions
+implement that contract); `tds-ext-lexware-pkg` / `tds-ext-support-tickets-pkg` are the
 worked references for the container-first Module + RBAC pattern.
 
 > Status (2026-07-20): **published @0.1.1** (GitHub Packages `@latest`, tag `v0.1.1`).
@@ -27,7 +27,7 @@ and exposes:
 ## Why it exists / migration role
 
 Replaces the customer/company directory that never got ported off `tds-customer-api`
-— the new `tds-core-panel-frontend` user editor reads the company list live from
+— the new `tds-core-frontend-pkg` user editor reads the company list live from
 that legacy service. This extension is that list's new home and the foundation the
 billing / projects / documents / messages extensions build on. See the org's
 migration epic.
@@ -37,7 +37,7 @@ migration epic.
   migrating, preserve existing customer ids (data migration), and repoint the
   frontend's `CUSTOMER_API_URL` to this extension's `GET /admin/customers`.
 - The table is deliberately named `customer` (canonical), distinct from
-  `tds-ext-lexware`'s own `lx_customer` billing directory — no collision.
+  `tds-ext-lexware-pkg`'s own `lx_customer` billing directory — no collision.
 
 ## Conventions (from the template — don't regress)
 
