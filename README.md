@@ -1,8 +1,8 @@
 # tds-ext-customers-pkg
 
-**Customer/company directory** for the TDS panel — the canonical `customer` list.
-A build-time-composed extension for the panel platform (`tds-panel-contract-pkg` +
-`tds-core-panel-*`).
+**Customer/company directory** for the TDS frontend — the canonical `customer` list.
+A build-time-composed extension for the frontend platform (`tds-frontend-contract-pkg` +
+`tds-core-frontend-*`).
 
 ## Features
 
@@ -17,7 +17,7 @@ product target.
 ## Migration role
 
 This is the new home of the customer/company directory that was never ported off
-`tds-customer-api`. The new panel's user editor currently reads that list live from
+`tds-customer-api`. The new frontend's user editor currently reads that list live from
 the legacy service; this extension replaces it and is the foundation for the
 billing / projects / documents / messages extensions. On cutover, preserve existing
 customer ids (`tds-auth-api` memberships reference them) and repoint the frontend's
@@ -27,15 +27,15 @@ customer ids (`tds-auth-api` memberships reference them) and repoint the fronten
 ## Develop
 
 ```bash
-npm install --no-package-lock   # pulls tds-panel-contract from GitHub Packages (needs NPM_TOKEN)
+npm install --no-package-lock   # pulls tds-frontend-contract from GitHub Packages (needs NPM_TOKEN)
 npm run type-check && npm run build
-composer install                # resolves tds-panel-contract from its public VCS repo
+composer install                # resolves tds-frontend-contract from its public VCS repo
 composer test                   # phpunit: Module RBAC + validation (DB-free)
 ```
 
 Enable it: add the manifest to the admin `astro.config.mjs`
-(`panelHost({ extensions: [...] })`) and `new CustomersModule()` to
-`tds-core-panel-api`'s `Modules::enabled()`.
+(`frontendHost({ extensions: [...] })`) and `new CustomersModule()` to
+`tds-core-frontend-api`'s `Modules::enabled()`.
 
 ## Versioning
 

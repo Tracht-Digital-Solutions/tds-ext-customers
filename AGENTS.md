@@ -1,14 +1,14 @@
 # AGENTS.md — tds-ext-customers-pkg
 
-The **customer/company directory** panel extension: the panel's canonical
-`customer` list. Read `tds-panel-contract-pkg`'s AGENTS.md first (extensions
+The **customer/company directory** frontend extension: the frontend's canonical
+`customer` list. Read `tds-frontend-contract-pkg`'s AGENTS.md first (extensions
 implement that contract); `tds-ext-lexware-pkg` / `tds-ext-support-tickets-pkg` are the
 worked references for the container-first Module + RBAC pattern.
 
 > Status (2026-07-20): **published @0.1.1** (GitHub Packages `@latest`, tag `v0.1.1`).
 > Remaining go-live: wire into the admin product's `astro.config` (dep `^0.1.1` + the
 > extensions array) — this ext's `/admin/customers` then replaces the legacy
-> `tds-customer-api` company-list call the panel user-management uses. See the root
+> `tds-customer-api` company-list call the frontend user-management uses. See the root
 > `MIGRATION-STATUS.md` (issue #3).
 
 ## What it does
@@ -22,7 +22,7 @@ and exposes:
 - `GET /customers/summary` — widget count.
 - **`GET /admin/customers`** — the admin-only `{customers:[{id,name}]}` list the
   **base user-management** consumes for company-membership editing (replacing the
-  legacy `tds-customer-api` endpoint the new panel still calls today).
+  legacy `tds-customer-api` endpoint the new frontend still calls today).
 
 ## Why it exists / migration role
 
@@ -57,5 +57,5 @@ composer install && composer test    # phpunit: Module RBAC + validation (DB-fre
 npm install --no-package-lock && npm run type-check && npm run build
 ```
 
-Register `new CustomersModule()` in `tds-core-panel-api`'s `Modules::enabled()` and
-add the manifest to the admin target's `panelHost({ extensions })`.
+Register `new CustomersModule()` in `tds-core-frontend-api`'s `Modules::enabled()` and
+add the manifest to the admin target's `frontendHost({ extensions })`.
